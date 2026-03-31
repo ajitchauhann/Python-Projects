@@ -7,3 +7,13 @@ def merge_dicts(d1, d2):
 # Example: Merging dicts with summing behavior
 print(merge_dicts({'a': 10, 'b': 20}, {'b': 5, 'c': 15})) 
 
+
+class Animal:
+    def speak(self): print("Animal")
+
+class Dog(Animal):
+    def bark(self): print("Dog")
+
+d = Dog()
+d.speak() # Inherited method
+d.bark()  # Own method

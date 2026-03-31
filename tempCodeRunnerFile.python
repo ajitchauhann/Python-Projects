@@ -1,0 +1,4 @@
+words = ["apple", "bat", "cherry"]
+# Filters words with length >= 4 and converts to uppercase
+filtered = [w.upper() for w in words if len(w) >= 4] 
+# Output: ['APPLE', 'CHERRY']
