@@ -64,3 +64,18 @@ school_bus = Bus("SchoolBus", 100, 50000)
 
 print(generic_vehicle.display_info())
 print(school_bus.display_info())
+
+
+
+class Student:
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+
+    def display(self):
+        print(f"Name: {self.name}, Marks: {self.marks}")
+
+
+s1 = Student("Ajit", 85)
+s1.display()
+
