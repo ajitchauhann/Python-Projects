@@ -1,0 +1,176 @@
+# Write to a file #
+
+# Case 1 - if the file is not present
+file = open("sample.txt","w")
+file.write("Hello World!")
+file.close()
+# Since file is closed hence this will not work.
+
+
+# Write multiline strings
+file = open('sample1.txt','w')
+file.write('hello world')
+file.write('\nHow are you?')
+file.close()
+
+ # Case 2 - If the file is already present
+file = open("sample.txt","w")
+file.write("salman khan")
+file.close()
+
+
+
+
+# Problem with w mode
+# Introducing append mode
+file = open('/content/sample1.txt','a')
+file.write('\nI am fine')
+file.close()
+
+## Working of write(w):- opens a file for writing,if file exists it delete all old data,
+#  if file doesn't exist it creates a new file.
+
+## Working of Append(a):- opens a file for writing, adds new data at the end,does not delete old data,
+#creates file if it doesnt exists...
+
+# Write multiple lines
+
+L = ['hello\n','hi\n','how are you buddy\n','I am doing well']
+file = open('/content/sample.txt','w')
+file.writelines(L)
+file.close()
+
+
+# Reading from files
+#-> using read()
+file = open('/content/sample.txt','r')
+s = file.read()
+print(s)
+file.close()
+
+# reading upto n(number) chars
+file = open('/content/sample.txt','r')
+s = file.read(10)
+print(s)
+file.close()
+
+# readline() -> to read line by line
+file = open('/content/sample.txt','r')
+print(file.readline(),end = '')
+print(file.readline(),end = '')
+file.close()
+
+
+
+# Reading entire using readline
+file = open('/content/sample.txt','r')
+
+while True:
+  data = file.readline()
+  if data == '':
+    break
+  else:
+    print(data,end ='')
+file.close()
+
+
+
+#Using Context Manager (With) it's used for closing the file.
+
+#(1) It's good idea to close a file after usage as it will free up.  
+#(2) If we dont close it, garbage collector would close it.  
+#(3) " With "  keyword closes the file as soon as the usage  is over. **bold text**
+
+
+# With
+with open('/content/sample1.txt','w') as file:
+  file.write('ajay chauhan')
+
+# Try f.read() now
+with open ('/content/sample.txt','r') as f:
+  print(f.read())
+
+# Moving within a file -> 10 char then 10 char
+with open('sample1.txt','r') as f:
+  print(f.read(10))
+with open('sample.txt','r') as f:
+
+  print(f.read(11))
+
+# benefits? -> to load a big file in memory
+big_file = ['hello ajay' for i in range(1000)]
+
+with open('big.txt','w') as f:
+  f.writelines(big_file)
+
+with open('big.txt','r') as f:
+  chunk_size = 100
+  while len(f.read(chunk_size)) > 0:
+    print(f.read(chunk_size),end = '')
+    f.read(chunk_size)
+
+# seek and tell function
+with open('sample.txt','r') as f:
+  print(f.read(10))
+  print(f.tell())
+  f.seek(0)
+  print(f.read(10))
+
+# "seek"("It moves the cursor to the nth position") during write.
+
+with open('sample.txt','w') as f:
+  f.write('Hello')
+  f.seek(3)
+  f.write('n')
+
+#Problems with working in text mode#
+
+#(1) Can't work with binary files like images  
+#(2) Not good for other data types like int / float / list / tuples.  
+
+# Working with binary file
+with open('/content/Child_Sexual_Abuse_Cases-min.original.jpg','rb') as f:
+ with open('child_sexual.png','wb') as wf:
+  wf.write(f.read())
+
+
+
+
+
+
+# working with other data types
+with open('sample.txt','w') as f:
+  f.write(5) # It gaves error
+
+
+#Serialization and Deserialization #   
+
+#(1) **Serialization** - process of converting python data types to JSON format.  
+#(2) **Deserialization** - process of converting JSON to python data types  
+
+# Serialization using json module
+# list
+import json
+
+L = [1,2,3,4]
+
+with open('demo.json','w') as f:
+  json.dump(L,f)
+
+# dict
+
+d = {
+    'name':'ajay',
+    'age':17,
+    'gender':'male'
+}
+with open('demo.json','w') as f:
+  json.dump(d,f,indent = 4)
+
+# deserialization
+import json
+
+with open('demo.json','r') as f:
+  d = json.load(f)
+  print(d)
+  print(type(d))
