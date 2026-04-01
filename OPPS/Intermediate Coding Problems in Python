@@ -32,3 +32,35 @@ def test_1(string =""):
 print(test_1("character")) 
 print(test_1("standfan")) 
 print(test_1("class"))
+
+
+
+
+
+
+# 1. Parent Class (Encapsulation)
+class Vehicle:
+    def __init__(self, brand, max_speed):
+        self.brand = brand
+        self.max_speed = max_speed
+
+    def display_info(self):
+        return f"{self.brand} max speed is {self.max_speed}"
+
+# 2. Child Class (Inheritance)
+class Bus(Vehicle):
+    def __init__(self, brand, max_speed, price):
+        super().__init__(brand, max_speed)
+        # Encapsulation: Private attribute
+        self.__price = price 
+
+    # 3. Polymorphism: Overriding display_info
+    def display_info(self):
+        return f"Bus {self.brand} costs ${self.__price} and goes {self.max_speed}km/h"
+
+# Usage
+generic_vehicle = Vehicle("GenericCar", 150)
+school_bus = Bus("SchoolBus", 100, 50000)
+
+print(generic_vehicle.display_info())
+print(school_bus.display_info())

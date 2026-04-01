@@ -21,6 +21,7 @@ file.close()
 
 
 
+
 # Problem with w mode
 # Introducing append mode
 file = open('/content/sample1.txt','a')
@@ -174,3 +175,6 @@ with open('demo.json','r') as f:
   d = json.load(f)
   print(d)
   print(type(d))
+
+
+  
