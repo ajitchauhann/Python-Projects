@@ -2,3 +2,18 @@ words = ["apple", "bat", "cherry"]
 # Filters words with length >= 4 and converts to uppercase
 filtered = [w.upper() for w in words if len(w) >= 4] 
 # Output: ['APPLE', 'CHERRY']
+
+
+
+
+class Employee:
+    company = "Google"   # class variable
+
+    def __init__(self, name):
+        self.name = name  # instance variable
+
+e1 = Employee("Ajit")
+e2 = Employee("Rahul")
+
+print(e1.company, e1.name)
+print(e2.company, e2.name)

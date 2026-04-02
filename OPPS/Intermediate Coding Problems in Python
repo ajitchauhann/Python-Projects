@@ -79,3 +79,28 @@ class Student:
 s1 = Student("Ajit", 85)
 s1.display()
 
+
+
+
+
+
+class Employee:
+    company = "Google"   # class variable
+
+    def __init__(self, name):
+        self.name = name  # instance variable
+
+e1 = Employee("Ajit")
+e2 = Employee("Rahul")
+
+print(e1.company, e1.name)
+print(e2.company, e2.name)
+
+
+
+
+
+
+
+
+

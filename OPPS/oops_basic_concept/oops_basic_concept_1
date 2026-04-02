@@ -1,0 +1,31 @@
+class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+s1 = Student("Ajit", 21)
+
+print(s1.name)
+print(s1.age)
+
+class Car:
+    def __init__(self, brand):
+        self.brand = brand
+
+c1 = Car("BMW")
+print(c1.brand)
+
+
+class BankAccount:
+    def __init__(self, balance):
+        self.balance = balance
+
+    def deposit(self, amount):
+        self.balance += amount
+
+    def show_balance(self):
+        print(self.balance)
+
+acc = BankAccount(1000)
+acc.deposit(500)
+acc.show_balance()
