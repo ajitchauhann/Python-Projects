@@ -1,0 +1,31 @@
+class Movie:
+    def __init__(self, name, seats):
+        self.name = name
+        self.available_seats = seats
+
+
+class User:
+    def __init__(self, name):
+        self.name = name
+
+
+class Booking:
+    def __init__(self, user, movie):
+        self.user = user
+        self.movie = movie
+
+    def book_ticket(self, seats):
+        if seats <= self.movie.available_seats:
+            self.movie.available_seats -= seats
+            print(f"{self.user.name} booked {seats} seat(s) for {self.movie.name}")
+        else:
+            print("Not enough seats available")
+
+
+# Usage
+m1 = Movie("Avengers", 10)
+user = User("Ajit")
+
+b1 = Booking(user, m1)
+b1.book_ticket(3)
+b1.book_ticket(8)
