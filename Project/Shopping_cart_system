@@ -1,0 +1,67 @@
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+
+class Cart:
+    def __init__(self):
+        self.items = []
+
+    def add_item(self, product):
+        self.items.append(product)
+
+    def remove_item(self, product_name):
+        self.items = [item for item in self.items if item.name != product_name]
+
+    def total_price(self):
+        total = sum(item.price for item in self.items)
+        print("Total Price:", total)
+
+    def show_items(self):
+        for item in self.items:
+            print(item.name, "-", item.price)
+
+
+# Usage
+p1 = Product("Shirt", 500)
+p2 = Product("Shoes", 1500)
+
+cart = Cart()
+cart.add_item(p1)
+cart.add_item(p2)
+
+cart.show_items()
+cart.total_price()
+
+
+class BankAccount:
+    def __init__(self, name, balance=0):
+        self.name = name
+        self.balance = balance
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.balance += amount
+            print("Deposited:", amount)
+        else:
+            print("Invalid amount")
+
+    def withdraw(self, amount):
+        if amount > self.balance:
+            print("Insufficient balance")
+        elif amount <= 0:
+            print("Invalid amount")
+        else:
+            self.balance -= amount
+            print("Withdrawn:", amount)
+
+    def check_balance(self):
+        print("Current Balance:", self.balance)
+
+
+# Usage
+acc = BankAccount("Ajit", 1000)
+acc.deposit(500)
+acc.withdraw(300)
+acc.check_balance()
