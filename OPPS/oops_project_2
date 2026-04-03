@@ -1,0 +1,43 @@
+class Account:
+    def __init__(self, balance=0):
+        self.balance = balance
+        self.history = []
+
+    def deposit(self, amount):
+        self.balance += amount
+        self.history.append(f"Deposited {amount}")
+
+    def withdraw(self, amount):
+        if amount <= self.balance:
+            self.balance -= amount
+            self.history.append(f"Withdrew {amount}")
+        else:
+            print("Insufficient balance")
+
+    def show_history(self):
+        for h in self.history:
+            print(h)
+
+
+class User:
+    def __init__(self, name):
+        self.name = name
+        self.account = Account()  # dependency
+
+    def deposit(self, amount):
+        self.account.deposit(amount)
+
+    def withdraw(self, amount):
+        self.account.withdraw(amount)
+
+    def check_balance(self):
+        print(f"{self.name} Balance:", self.account.balance)
+
+
+# Usage
+u1 = User("Ajit")
+u1.deposit(1000)
+u1.withdraw(300)
+u1.check_balance()
+u1.account.show_history()
+
