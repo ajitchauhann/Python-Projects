@@ -1,0 +1,67 @@
+import json
+from datetime import datetime
+
+class Task:
+    def __init__(self, title, priority="Medium"):
+        self.title = title
+        self.priority = priority
+        self.status = "Pending"
+        self.created_at = datetime.now().strftime("%Y-%m-%d")
+
+    def mark_complete(self):
+        self.status = "Completed"
+
+    def to_dict(self):
+        return {
+            "title": self.title,
+            "priority": self.priority,
+            "status": self.status,
+            "created_at": self.created_at
+        }
+
+
+class TaskManager:
+    def __init__(self, file="data.json"):
+        self.file = file
+        self.tasks = self.load_tasks()
+
+    def load_tasks(self):
+        try:
+            with open(self.file, "r") as f:
+                return json.load(f)
+        except:
+            return []
+
+    def save_tasks(self):
+        with open(self.file, "w") as f:
+            json.dump(self.tasks, f, indent=4)
+
+    def add_task(self, task):
+        self.tasks.append(task.to_dict())
+        self.save_tasks()
+
+    def delete_task(self, index):
+        if 0 <= index < len(self.tasks):
+            removed = self.tasks.pop(index)
+            self.save_tasks()
+            return removed
+        return None
+
+    def mark_complete(self, index):
+        if 0 <= index < len(self.tasks):
+            self.tasks[index]["status"] = "Completed"
+            self.save_tasks()
+
+    def filter_tasks(self, status=None, priority=None):
+        result = self.tasks
+
+        if status:
+            result = [t for t in result if t["status"] == status]
+
+        if priority:
+            result = [t for t in result if t["priority"] == priority]
+
+        return result
+
+    def search_task(self, keyword):
+        return [t for t in self.tasks if keyword.lower() in t["title"].lower()]
