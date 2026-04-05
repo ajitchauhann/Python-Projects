@@ -152,3 +152,21 @@ books[0].mark_read()
 
 for b in books:
     print(b.title, "Read" if b.read else "Not Read")
+
+
+
+import random
+
+class Game:
+    def __init__(self):
+        self.num = random.randint(1, 10)
+
+    def guess(self, g):
+        if g == self.num:
+            print("Correct!")
+        else:
+            print("Wrong!")
+
+
+g = Game()
+g.guess(5)
