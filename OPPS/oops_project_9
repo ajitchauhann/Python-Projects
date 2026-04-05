@@ -5,3 +5,32 @@ class Book:
 class Library:
     def add_book(self, book):
         ...
+
+
+class Task:
+    def __init__(self, title):
+        self.title = title
+        self.completed = False
+
+    def mark_done(self):
+        self.completed = True
+
+
+class Todo:
+    def __init__(self):
+        self.tasks = []
+
+    def add_task(self, title):
+        self.tasks.append(Task(title))
+
+    def show_tasks(self):
+        for i, t in enumerate(self.tasks, 1):
+            status = "✔" if t.completed else "✘"
+            print(i, t.title, status)
+
+
+todo = Todo()
+todo.add_task("Learn Python")
+todo.add_task("Build project")
+todo.tasks[0].mark_done()
+todo.show_tasks()
