@@ -136,3 +136,19 @@ class Dice:
 d = Dice()
 print("You rolled:", d.roll())
 
+
+
+class Book:
+    def __init__(self, title):
+        self.title = title
+        self.read = False
+
+    def mark_read(self):
+        self.read = True
+
+
+books = [Book("Python"), Book("AI")]
+books[0].mark_read()
+
+for b in books:
+    print(b.title, "Read" if b.read else "Not Read")
