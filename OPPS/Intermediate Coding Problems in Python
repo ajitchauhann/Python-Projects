@@ -100,7 +100,29 @@ print(e2.company, e2.name)
 
 
 
+class User:
+    def __init__(self, username, password):
+        self.username = username
+        self.password = password
 
+
+class AuthSystem:
+    def __init__(self):
+        self.users = {}
+
+    def register(self, u, p):
+        self.users[u] = User(u, p)
+
+    def login(self, u, p):
+        if u in self.users and self.users[u].password == p:
+            print("✅ Login success")
+        else:
+            print("❌ Invalid")
+
+
+auth = AuthSystem()
+auth.register("ajit", "1234")
+auth.login("ajit", "1234")
 
 
 
