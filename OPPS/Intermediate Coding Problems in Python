@@ -170,3 +170,19 @@ class Game:
 
 g = Game()
 g.guess(5)
+
+
+
+
+
+import time
+
+class Alarm:
+    def set_alarm(self, seconds):
+        print("Waiting...")
+        time.sleep(seconds)
+        print("⏰ Time's up!")
+
+
+a = Alarm()
+a.set_alarm(2)
