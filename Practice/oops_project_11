@@ -68,3 +68,6 @@ quiz = Quiz()
 quiz.add("2+2?", "4")
 quiz.add("Capital of India?", "Delhi")
 quiz.run()
+
+
+

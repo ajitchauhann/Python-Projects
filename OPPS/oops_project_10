@@ -27,6 +27,21 @@ for s in shapes:
 
 
     
+class Voting:
+    def __init__(self):
+        self.votes = {}
 
+    def vote(self, name):
+        self.votes[name] = self.votes.get(name, 0) + 1
+
+    def result(self):
+        print(self.votes)
+
+
+v = Voting()
+v.vote("A")
+v.vote("B")
+v.vote("A")
+v.result()
 
     
