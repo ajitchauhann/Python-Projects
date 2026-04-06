@@ -24,3 +24,9 @@ shapes = [Rectangle(4, 5), Circle(3)]
 
 for s in shapes:
     print("Area:", s.area())
+
+
+    
+
+
+    
