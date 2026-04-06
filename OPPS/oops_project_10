@@ -44,4 +44,26 @@ v.vote("B")
 v.vote("A")
 v.result()
 
+
+class Ticket:
+    def __init__(self, seat):
+        self.seat = seat
+
+
+class Booking:
+    def __init__(self):
+        self.booked = []
+
+    def book(self, seat):
+        if seat not in self.booked:
+            self.booked.append(seat)
+            print("Booked")
+        else:
+            print("Already taken")
+
+
+b = Booking()
+b.book(1)
+b.book(1)
+
     
