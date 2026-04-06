@@ -13,3 +13,29 @@ b = Bill()
 b.add_item("Pen", 10)
 b.add_item("Notebook", 50)
 print("Total:", b.total())
+
+
+
+
+class Account:
+    def __init__(self, balance):
+        self.balance = balance
+
+    def calculate_interest(self):
+        return 0
+
+
+class Savings(Account):
+    def calculate_interest(self):
+        return self.balance * 0.05
+
+
+class Current(Account):
+    def calculate_interest(self):
+        return self.balance * 0.02
+
+
+a1 = Savings(1000)
+a2 = Current(1000)
+
+print(a1.calculate_interest(), a2.calculate_interest())
