@@ -66,4 +66,18 @@ b = Booking()
 b.book(1)
 b.book(1)
 
+
+
+
+class MemoryGame:
+    def __init__(self):
+        self.items = ["A", "B", "C"]
+
+    def show(self):
+        print(self.items)
+
+
+g = MemoryGame()
+g.show()
+
     
