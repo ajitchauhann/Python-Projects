@@ -39,3 +39,32 @@ a1 = Savings(1000)
 a2 = Current(1000)
 
 print(a1.calculate_interest(), a2.calculate_interest())
+
+
+
+class Question:
+    def __init__(self, q, ans):
+        self.q = q
+        self.ans = ans
+
+
+class Quiz:
+    def __init__(self):
+        self.questions = []
+
+    def add(self, q, ans):
+        self.questions.append(Question(q, ans))
+
+    def run(self):
+        score = 0
+        for q in self.questions:
+            user = input(q.q + " ")
+            if user == q.ans:
+                score += 1
+        print("Score:", score)
+
+
+quiz = Quiz()
+quiz.add("2+2?", "4")
+quiz.add("Capital of India?", "Delhi")
+quiz.run()
