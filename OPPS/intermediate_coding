@@ -58,3 +58,8 @@ class ExpenseTracker:
         print(f"Total Income: {income}")
         print(f"Total Expense: {expense}")
         print(f"Balance: {income - expense}")
+
+
+
+
+        

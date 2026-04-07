@@ -1,0 +1,42 @@
+from tracker import ExpenseTracker
+
+def main():
+    tracker = ExpenseTracker()
+
+    while True:
+        print("\n1. Add Income")
+        print("2. Add Expense")
+        print("3. Show Transactions")
+        print("4. Show Balance")
+        print("5. Summary")
+        print("6. Exit")
+
+        choice = input("Choose: ")
+
+        if choice == "1":
+            amt = float(input("Amount: "))
+            cat = input("Category: ")
+            tracker.add_transaction(amt, cat, "income")
+
+        elif choice == "2":
+            amt = float(input("Amount: "))
+            cat = input("Category: ")
+            tracker.add_transaction(amt, cat, "expense")
+
+        elif choice == "3":
+            tracker.show_transactions()
+
+        elif choice == "4":
+            print("Balance:", tracker.get_balance())
+
+        elif choice == "5":
+            tracker.summary()
+
+        elif choice == "6":
+            break
+
+        else:
+            print("Invalid choice!")
+
+if __name__ == "__main__":
+    main()
