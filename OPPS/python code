@@ -79,3 +79,19 @@ def organize(folder):
             shutil.move(folder + "/" + file, folder + "/texts/" + file)
 
 organize("test_folder")
+
+
+
+import random
+
+num = random.randint(1, 100)
+
+while True:
+    guess = int(input("Guess: "))
+    if guess == num:
+        print("Correct!")
+        break
+    elif guess > num:
+        print("Too high")
+    else:
+        print("Too low")
