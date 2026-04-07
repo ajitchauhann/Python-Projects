@@ -65,3 +65,17 @@ class Calculator:
 calc = Calculator()
 print(calc.add(5, 3))
 print(calc.div(10, 2))
+
+
+
+import os
+import shutil
+
+def organize(folder):
+    for file in os.listdir(folder):
+        if file.endswith(".jpg"):
+            shutil.move(folder + "/" + file, folder + "/images/" + file)
+        elif file.endswith(".txt"):
+            shutil.move(folder + "/" + file, folder + "/texts/" + file)
+
+organize("test_folder")
