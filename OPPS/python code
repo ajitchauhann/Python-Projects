@@ -54,3 +54,14 @@ def generate_password(length=8):
     return ''.join(random.choice(chars) for _ in range(length))
 
 print("Password:", generate_password(10))
+
+
+class Calculator:
+    def add(self, a, b): return a + b
+    def sub(self, a, b): return a - b
+    def mul(self, a, b): return a * b
+    def div(self, a, b): return a / b if b != 0 else "Error"
+
+calc = Calculator()
+print(calc.add(5, 3))
+print(calc.div(10, 2))
