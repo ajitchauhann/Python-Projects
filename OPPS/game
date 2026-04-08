@@ -42,3 +42,14 @@ if text == text[::-1]:
     print("Palindrome")
 else:
     print("Not Palindrome")
+
+
+    import random
+
+while True:
+    roll = input("Roll dice? (y/n): ")
+    
+    if roll.lower() == 'y':
+        print("Dice:", random.randint(1, 6))
+    else:
+        break
