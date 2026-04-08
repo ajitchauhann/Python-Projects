@@ -5,3 +5,11 @@ domain = email[email.index("@")+1:]
 
 print("Username:", username)
 print("Domain:", domain)
+
+
+import random
+
+names = input("Enter names separated by comma: ").split(",")
+winner = random.choice(names)
+
+print("Selected:", winner.strip())
