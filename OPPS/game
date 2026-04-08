@@ -26,3 +26,10 @@ while seconds:
     seconds -= 1
 
 print("Time's up!")
+
+
+
+text = input("Enter a sentence: ")
+
+words = text.split()
+print("Total words:", len(words))
