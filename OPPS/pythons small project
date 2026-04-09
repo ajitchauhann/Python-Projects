@@ -6,3 +6,18 @@ def generate_password(length=8):
     return ''.join(random.choice(chars) for _ in range(length))
 
 print("Generated Password:", generate_password(10))
+
+
+
+
+tasks = []
+
+while True:
+    task = input("Enter task (or 'exit'): ")
+    if task == "exit":
+        break
+    tasks.append(task)
+
+print("\nYour Tasks:")
+for i, t in enumerate(tasks, 1):
+    print(i, "-", t)
