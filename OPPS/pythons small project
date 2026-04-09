@@ -21,3 +21,16 @@ while True:
 print("\nYour Tasks:")
 for i, t in enumerate(tasks, 1):
     print(i, "-", t)
+
+
+    import random
+
+num = random.randint(1, 10)
+
+while True:
+    guess = int(input("Guess number (1-10): "))
+    if guess == num:
+        print("Correct!")
+        break
+    else:
+        print("Try again!")
