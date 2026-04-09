@@ -43,3 +43,10 @@ domain = email[email.index("@") + 1:]
 
 print("Username:", username)
 print("Domain:", domain)
+
+
+
+text = input("Enter sentence: ")
+
+words = text.split()
+print("Word count:", len(words))
