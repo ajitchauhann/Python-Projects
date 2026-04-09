@@ -58,3 +58,9 @@ if word == word[::-1]:
     print("Palindrome")
 else:
     print("Not Palindrome")
+
+
+    with open("sample.txt", "w") as f:
+    f.write("Hello, this is my GitHub project!")
+
+print("File created!")
