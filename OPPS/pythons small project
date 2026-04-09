@@ -69,3 +69,12 @@ print("File created!")
 num = int(input("Enter number: "))
 
 print("Even" if num % 2 == 0 else "Odd")
+
+
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
+
+print("Add:", a + b)
+print("Sub:", a - b)
+print("Mul:", a * b)
+print("Div:", a / b)
