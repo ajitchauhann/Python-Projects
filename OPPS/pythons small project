@@ -50,3 +50,11 @@ text = input("Enter sentence: ")
 
 words = text.split()
 print("Word count:", len(words))
+
+
+word = input("Enter word: ")
+
+if word == word[::-1]:
+    print("Palindrome")
+else:
+    print("Not Palindrome")
