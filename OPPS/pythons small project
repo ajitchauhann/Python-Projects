@@ -64,3 +64,8 @@ else:
     f.write("Hello, this is my GitHub project!")
 
 print("File created!")
+
+
+num = int(input("Enter number: "))
+
+print("Even" if num % 2 == 0 else "Odd")
