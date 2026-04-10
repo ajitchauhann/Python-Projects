@@ -40,3 +40,12 @@ plt.show()
 sns.barplot(x="class", y="survived", data=df)
 plt.title("Survival Rate by Class")
 plt.show()
+
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = sns.load_dataset("iris")
+
+sns.pairplot(df, hue="species")
+plt.show()
