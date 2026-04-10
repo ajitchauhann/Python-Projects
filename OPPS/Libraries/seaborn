@@ -1,0 +1,22 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Sample dataset
+data = {
+    "Month": ["Jan","Feb","Mar","Apr","May","Jun"],
+    "Sales": [200, 300, 250, 400, 500, 450],
+    "Profit": [20, 40, 30, 60, 80, 70]
+}
+
+df = pd.DataFrame(data)
+
+sns.set_style("whitegrid")
+
+# Line plot
+sns.lineplot(x="Month", y="Sales", data=df, marker="o", label="Sales")
+sns.lineplot(x="Month", y="Profit", data=df, marker="o", label="Profit")
+
+plt.title("Sales vs Profit Trend")
+plt.legend()
+plt.show()
