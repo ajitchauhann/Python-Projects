@@ -12,3 +12,15 @@ plt.show()
 sns.boxplot(x="sex", y="tip", data=df)
 plt.title("Tips by Gender")
 plt.show()
+
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = sns.load_dataset("tips")
+
+corr = df.corr(numeric_only=True)
+
+sns.heatmap(corr, annot=True, cmap="coolwarm")
+plt.title("Correlation Heatmap")
+plt.show()
