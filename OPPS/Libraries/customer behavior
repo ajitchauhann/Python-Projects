@@ -1,0 +1,14 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = sns.load_dataset("tips")
+
+# Tip distribution
+sns.histplot(df["tip"], kde=True)
+plt.title("Tip Distribution")
+plt.show()
+
+# Gender vs Tips
+sns.boxplot(x="sex", y="tip", data=df)
+plt.title("Tips by Gender")
+plt.show()

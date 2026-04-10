@@ -20,3 +20,6 @@ sns.lineplot(x="Month", y="Profit", data=df, marker="o", label="Profit")
 plt.title("Sales vs Profit Trend")
 plt.legend()
 plt.show()
+
+
+
