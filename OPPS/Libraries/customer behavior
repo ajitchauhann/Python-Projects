@@ -24,3 +24,19 @@ corr = df.corr(numeric_only=True)
 sns.heatmap(corr, annot=True, cmap="coolwarm")
 plt.title("Correlation Heatmap")
 plt.show()
+
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = sns.load_dataset("titanic")
+
+# Survival count
+sns.countplot(x="survived", data=df)
+plt.title("Survival Count")
+plt.show()
+
+# Survival by class
+sns.barplot(x="class", y="survived", data=df)
+plt.title("Survival Rate by Class")
+plt.show()
