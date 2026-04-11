@@ -38,3 +38,21 @@ sns.barplot(x="Category", y="Revenue", data=df)
 plt.title("Revenue by Category")
 plt.xticks(rotation=30)
 plt.show()
+
+
+
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+data = {
+    "Gender": ["Male","Female","Male","Female","Male"],
+    "Math": [78, 85, 90, 88, 76],
+    "Science": [80, 89, 85, 92, 78]
+}
+
+df = pd.DataFrame(data)
+
+sns.boxplot(x="Gender", y="Math", data=df)
+plt.title("Math Score Distribution")
+plt.show()
