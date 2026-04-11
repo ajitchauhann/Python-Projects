@@ -94,3 +94,14 @@ df = sns.load_dataset("tips")
 sns.scatterplot(x="total_bill", y="tip", hue="sex", data=df)
 plt.title("Bill vs Tip by Gender")
 plt.show()
+
+
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = sns.load_dataset("iris")
+
+sns.histplot(df["sepal_length"], kde=True)
+plt.title("Sepal Length Distribution")
+plt.show()
