@@ -126,3 +126,13 @@ df = sns.load_dataset("tips")
 sns.regplot(x="total_bill", y="tip", data=df)
 plt.title("Regression Plot")
 plt.show()
+
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = sns.load_dataset("titanic")
+
+sns.countplot(x="class", hue="survived", data=df)
+plt.title("Survival by Class")
+plt.show()
