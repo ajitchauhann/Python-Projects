@@ -148,3 +148,25 @@ corr = df.corr(numeric_only=True)
 sns.heatmap(corr, annot=True, cmap="viridis", linewidths=1)
 plt.title("Advanced Heatmap")
 plt.show()
+
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = sns.load_dataset("tips")
+
+sns.set_style("whitegrid")
+
+plt.figure(figsize=(12,6))
+
+plt.subplot(1,3,1)
+sns.boxplot(x="day", y="total_bill", data=df)
+
+plt.subplot(1,3,2)
+sns.barplot(x="day", y="tip", data=df)
+
+plt.subplot(1,3,3)
+sns.histplot(df["total_bill"], kde=True)
+
+plt.tight_layout()
+plt.show()
