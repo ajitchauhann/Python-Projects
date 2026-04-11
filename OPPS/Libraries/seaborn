@@ -105,3 +105,14 @@ df = sns.load_dataset("iris")
 sns.histplot(df["sepal_length"], kde=True)
 plt.title("Sepal Length Distribution")
 plt.show()
+
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = sns.load_dataset("tips")
+
+g = sns.FacetGrid(df, col="time")
+g.map(sns.histplot, "total_bill")
+
+plt.show()
