@@ -136,3 +136,15 @@ df = sns.load_dataset("titanic")
 sns.countplot(x="class", hue="survived", data=df)
 plt.title("Survival by Class")
 plt.show()
+
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = sns.load_dataset("iris")
+
+corr = df.corr(numeric_only=True)
+
+sns.heatmap(corr, annot=True, cmap="viridis", linewidths=1)
+plt.title("Advanced Heatmap")
+plt.show()
