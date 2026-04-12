@@ -28,3 +28,13 @@ data = [10,20,20,30,30,30,40,50]
 plt.hist(data, bins=5)
 plt.title("Histogram")
 plt.show()
+
+
+import matplotlib.pyplot as plt
+
+x = [1,2,3,4,5]
+y = [5,7,6,8,7]
+
+plt.scatter(x, y)
+plt.title("Scatter Plot")
+plt.show()
