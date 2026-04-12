@@ -8,3 +8,14 @@ plt.title("Basic Line Plot")
 plt.xlabel("X-axis")
 plt.ylabel("Y-axis")
 plt.show()
+
+
+
+import matplotlib.pyplot as plt
+
+categories = ["A","B","C","D"]
+values = [10,20,15,25]
+
+plt.bar(categories, values)
+plt.title("Bar Chart Example")
+plt.show()
