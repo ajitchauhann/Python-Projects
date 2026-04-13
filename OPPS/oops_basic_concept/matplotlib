@@ -48,3 +48,20 @@ sizes = [40,35,25]
 plt.pie(sizes, labels=labels, autopct="%1.1f%%")
 plt.title("Pie Chart")
 plt.show()
+
+
+import matplotlib.pyplot as plt
+
+months = ["Jan","Feb","Mar","Apr"]
+sales = [200,300,250,400]
+profit = [20,40,30,60]
+
+plt.plot(months, sales, label="Sales")
+plt.plot(months, profit, label="Profit")
+
+plt.legend()
+plt.title("Sales vs Profit")
+plt.xlabel("Months")
+plt.ylabel("Amount")
+
+plt.show()
