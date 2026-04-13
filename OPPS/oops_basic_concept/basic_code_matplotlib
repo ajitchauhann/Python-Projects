@@ -21,3 +21,18 @@ plt.pie(sizes, labels=labels, autopct='%1.1f%%')
 plt.title("Programming Language Usage")
 
 plt.show()
+
+
+
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5]
+y = [5, 15, 25, 35, 45]
+
+plt.scatter(x, y)
+
+plt.title("Scatter Plot Example")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+
+plt.show()
