@@ -36,3 +36,16 @@ plt.xlabel("X-axis")
 plt.ylabel("Y-axis")
 
 plt.show()
+
+
+import matplotlib.pyplot as plt
+
+data = [10, 20, 20, 30, 30, 30, 40, 50]
+
+plt.hist(data, bins=5)
+
+plt.title("Histogram Example")
+plt.xlabel("Value")
+plt.ylabel("Frequency")
+
+plt.show()
