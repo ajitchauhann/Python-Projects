@@ -28,3 +28,16 @@ print("Total elements:", matrix.size)
 
 # Transpose
 print("Transpose:\n", matrix.T)
+
+
+
+
+import numpy as np
+
+# Random numbers
+rand_arr = np.random.rand(5)
+print("Random array:", rand_arr)
+
+# Random integers
+rand_int = np.random.randint(1, 10, size=5)
+print("Random integers:", rand_int)
