@@ -41,3 +41,13 @@ print("Random array:", rand_arr)
 # Random integers
 rand_int = np.random.randint(1, 10, size=5)
 print("Random integers:", rand_int)
+
+
+
+import numpy as np
+
+arr = np.array([10, 20, 30, 40, 50])
+
+print("First element:", arr[0])
+print("Last element:", arr[-1])
+print("Slice (1 to 3):", arr[1:4])
