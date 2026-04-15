@@ -87,3 +87,19 @@ result = np.dot(A, B)
 print("Matrix A:\n", A)
 print("Matrix B:\n", B)
 print("Dot Product:\n", result)
+
+
+
+import numpy as np
+
+arr = np.array([1, 2, 3, 4, 5])
+
+# Save
+np.save("array.npy", arr)
+
+# Load
+loaded_arr = np.load("array.npy")
+
+print("Loaded Array:", loaded_arr)
+
+
