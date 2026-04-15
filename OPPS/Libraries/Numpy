@@ -54,3 +54,22 @@ print("Slice (1 to 3):", arr[1:4])
 
 
 
+import numpy as np
+
+arr = np.arange(1, 10)
+
+reshaped = arr.reshape(3, 3)
+print("Original:", arr)
+print("Reshaped:\n", reshaped)
+
+
+
+import numpy as np
+
+arr = np.array([10, 20, 30, 40, 50])
+
+print("Mean:", np.mean(arr))
+print("Median:", np.median(arr))
+print("Standard Deviation:", np.std(arr))
+print("Max:", np.max(arr))
+print("Min:", np.min(arr))
