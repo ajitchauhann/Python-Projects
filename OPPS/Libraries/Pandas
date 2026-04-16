@@ -9,3 +9,13 @@ data = {
 df = pd.DataFrame(data)
 
 print(df)
+
+import pandas as pd
+
+# Read CSV file
+df = pd.read_csv("data.csv")
+
+print(df.head())   # First 5 rows
+print(df.tail())   # Last 5 rows
+
+
