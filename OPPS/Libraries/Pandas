@@ -53,3 +53,13 @@ df = pd.read_csv("data.csv")
 filtered = df[df["Age"] > 23]
 
 print(filtered)
+
+
+import pandas as pd
+
+df = pd.read_csv("data.csv")
+
+# Add column
+df["Salary"] = [20000, 30000, 25000]
+
+print(df)
