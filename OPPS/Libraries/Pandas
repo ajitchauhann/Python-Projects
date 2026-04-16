@@ -65,5 +65,18 @@ df["Salary"] = [20000, 30000, 25000]
 print(df)
 
 
+import pandas as pd
+
+df = pd.read_csv("data.csv")
+
+# Fill missing values
+df.fillna(0, inplace=True)
+
+# Drop missing values
+df.dropna(inplace=True)
+
+print(df)
+
+
 
 
