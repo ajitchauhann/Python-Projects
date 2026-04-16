@@ -89,4 +89,15 @@ print(df_sorted)
 
 
 
+import pandas as pd
+
+df = pd.read_csv("data.csv")
+
+# Save file
+df.to_csv("output.csv", index=False)
+
+print("File saved successfully!")
+
+
+
 
