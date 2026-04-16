@@ -30,4 +30,16 @@ print(df.columns)       # Column names
 
 
 
+import pandas as pd
 
+df = pd.read_csv("data.csv")
+
+# Select column
+print(df["Name"])
+
+# Multiple columns
+print(df[["Name", "Age"]])
+
+# Select rows
+print(df.iloc[0])      # First row
+print(df.iloc[0:2])    # First 2 rows
