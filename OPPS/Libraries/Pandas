@@ -43,3 +43,13 @@ print(df[["Name", "Age"]])
 # Select rows
 print(df.iloc[0])      # First row
 print(df.iloc[0:2])    # First 2 rows
+
+
+import pandas as pd
+
+df = pd.read_csv("data.csv")
+
+# Filter age > 23
+filtered = df[df["Age"] > 23]
+
+print(filtered)
