@@ -63,3 +63,7 @@ df = pd.read_csv("data.csv")
 df["Salary"] = [20000, 30000, 25000]
 
 print(df)
+
+
+
+
