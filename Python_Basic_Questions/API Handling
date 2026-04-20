@@ -7,3 +7,19 @@ data = response.json()
 
 price = data["bpi"]["USD"]["rate"]
 print(f"Bitcoin Price (USD): {price}")
+
+
+
+
+def logger(func):
+    def wrapper():
+        print("Function started")
+        func()
+        print("Function ended")
+    return wrapper
+
+@logger
+def greet():
+    print("Hello Ajit!")
+
+greet()
