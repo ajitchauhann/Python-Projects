@@ -120,22 +120,3 @@ print("Total:", cart.total())
 
 
 
-import pandas as pd
-
-# Sample dataset
-data = {
-    "Name": ["A", "B", "C", "D", "E"],
-    "Department": ["IT", "HR", "IT", "Finance", "HR"],
-    "Salary": [60000, 50000, 70000, 65000, 52000]
-}
-
-df = pd.DataFrame(data)
-
-# Group by Department
-result = df.groupby("Department").agg(
-    avg_salary=("Salary", "mean"),
-    max_salary=("Salary", "max"),
-    count=("Salary", "count")
-)
-
-print(result)
