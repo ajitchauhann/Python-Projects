@@ -16,3 +16,7 @@ def send_email(to_email, subject, message):
 
 # Example usage
 send_email("receiver@gmail.com", "Test", "Hello from Python!")
+
+
+
+
