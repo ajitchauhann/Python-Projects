@@ -15,3 +15,23 @@ if response.status_code == 200:
     print(f"Condition: {weather}")
 else:
     print("Error fetching data")
+
+
+
+
+    from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import MultinomialNB
+
+texts = ["Win money now", "Hello friend", "Free offer", "Let's meet"]
+labels = [1, 0, 1, 0]
+
+vectorizer = CountVectorizer()
+X = vectorizer.fit_transform(texts)
+
+X_train, X_test, y_train, y_test = train_test_split(X, labels, test_size=0.2)
+
+model = MultinomialNB()
+model.fit(X_train, y_train)
+
+print("Accuracy:", model.score(X_test, y_test))
