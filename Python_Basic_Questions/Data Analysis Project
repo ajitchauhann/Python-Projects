@@ -1,0 +1,26 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load dataset
+df = pd.read_csv("sales_data.csv")
+
+# Data cleaning
+df.dropna(inplace=True)
+df['Order Date'] = pd.to_datetime(df['Order Date'])
+
+# Feature engineering
+df['Month'] = df['Order Date'].dt.month
+
+# Grouping
+monthly_sales = df.groupby('Month')['Sales'].sum()
+
+# Visualization
+plt.figure(figsize=(8,5))
+plt.plot(monthly_sales.index, monthly_sales.values, marker='o')
+plt.title("Monthly Sales Trend")
+plt.xlabel("Month")
+plt.ylabel("Sales")
+plt.grid()
+
+plt.savefig("output.png")
+plt.show()
