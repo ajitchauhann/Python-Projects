@@ -1,3 +1,6 @@
+1. # Password Strength Checker.
+
+
 def check_password(password):
     if len(password) < 6:
         return "Weak ❌"
@@ -8,3 +11,8 @@ def check_password(password):
 
 pwd = input("Enter password: ")
 print(check_password(pwd))
+
+
+
+
+
