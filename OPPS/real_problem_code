@@ -12,6 +12,20 @@ def check_password(password):
 pwd = input("Enter password: ")
 print(check_password(pwd))
 
+# 2. Simple To-Do List (No file, just memory).
+
+tasks = []
+
+while True:
+    task = input("Enter task (or 'exit'): ")
+    if task.lower() == "exit":
+        break
+    tasks.append(task)
+
+print("\nYour Tasks:")
+for i, t in enumerate(tasks, 1):
+    print(f"{i}. {t}")
+
 
 
 
