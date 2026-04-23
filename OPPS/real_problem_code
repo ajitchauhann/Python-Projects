@@ -1,0 +1,10 @@
+def check_password(password):
+    if len(password) < 6:
+        return "Weak ❌"
+    elif password.isalpha() or password.isdigit():
+        return "Medium ⚠️"
+    else:
+        return "Strong ✅"
+
+pwd = input("Enter password: ")
+print(check_password(pwd))
