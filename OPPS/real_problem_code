@@ -27,6 +27,23 @@ for i, t in enumerate(tasks, 1):
     print(f"{i}. {t}")
 
 
+# 3. Even/Odd Counter (Mini Data Analysis).
+
+numbers = list(map(int, input("Enter numbers: ").split()))
+
+even = 0
+odd = 0
+
+for num in numbers:
+    if num % 2 == 0:
+        even += 1
+    else:
+        odd += 1
+
+print("Even:", even)
+print("Odd:", odd)
+
+
 
 
 
