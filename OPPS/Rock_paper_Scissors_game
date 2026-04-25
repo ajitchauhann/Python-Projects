@@ -1,0 +1,56 @@
+import random
+
+def get_computer_choice():
+    return random.choice(["rock", "paper", "scissors"])
+
+def decide_winner(user, computer):
+    if user == computer:
+        return "draw"
+    elif (user == "rock" and computer == "scissors") or \
+         (user == "paper" and computer == "rock") or \
+         (user == "scissors" and computer == "paper"):
+        return "win"
+    else:
+        return "lose"
+
+def play_game():
+    print("\n🎮 Rock Paper Scissors")
+    print("Modes: 1. Single Round  2. Best of 3")
+
+    mode = input("Choose mode (1/2): ")
+    rounds = 1 if mode == "1" else 3
+
+    user_score = 0
+    comp_score = 0
+
+    for i in range(rounds):
+        user = input("\nEnter rock/paper/scissors: ").lower()
+        computer = get_computer_choice()
+
+        print(f"Computer chose: {computer}")
+        result = decide_winner(user, computer)
+
+        if result == "win":
+            print("✅ You win this round")
+            user_score += 1
+        elif result == "lose":
+            print("❌ Computer wins this round")
+            comp_score += 1
+        else:
+            print("🤝 It's a draw")
+
+    print(f"\nFinal Score → You: {user_score} | Computer: {comp_score}")
+
+    if user_score > comp_score:
+        print("🏆 You win the game!")
+    elif user_score < comp_score:
+        print("💻 Computer wins the game!")
+    else:
+        print("🤝 Game Draw!")
+
+if __name__ == "__main__":
+    while True:
+        play_game()
+        again = input("\nPlay again? (y/n): ").lower()
+        if again != 'y':
+            break
