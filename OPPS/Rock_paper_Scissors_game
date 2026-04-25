@@ -54,3 +54,29 @@ if __name__ == "__main__":
         again = input("\nPlay again? (y/n): ").lower()
         if again != 'y':
             break
+
+
+        import random
+
+def scramble(word):
+    word_list = list(word)
+    random.shuffle(word_list)
+    return ''.join(word_list)
+
+def play():
+    words = ["python", "developer", "github", "keyboard", "function"]
+    word = random.choice(words)
+    scrambled = scramble(word)
+
+    print("🔤 Unscramble the word!")
+    print("Word:", scrambled)
+
+    guess = input("Your guess: ").lower()
+
+    if guess == word:
+        print("✅ Correct!")
+    else:
+        print(f"❌ Wrong! The word was: {word}")
+
+if __name__ == "__main__":
+    play()
