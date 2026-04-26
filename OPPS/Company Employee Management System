@@ -1,0 +1,79 @@
+# Company Employee Management System
+
+employees = []
+
+# Add Employee
+def add_employee():
+    emp_id = int(input("Enter Employee ID: "))
+    name = input("Enter Name: ")
+    dept = input("Enter Department: ")
+    salary = float(input("Enter Salary: "))
+    
+    employees.append({
+        "id": emp_id,
+        "name": name,
+        "department": dept,
+        "salary": salary
+    })
+    print("✅ Employee Added Successfully!\n")
+
+# View Employees
+def view_employees():
+    if not employees:
+        print("⚠ No employees found.\n")
+        return
+    for emp in employees:
+        print(emp)
+    print()
+
+# Search Employee
+def search_employee():
+    emp_id = int(input("Enter Employee ID to search: "))
+    for emp in employees:
+        if emp["id"] == emp_id:
+            print("🔍 Found:", emp, "\n")
+            return
+    print("❌ Employee not found.\n")
+
+# Salary Analysis
+def salary_analysis():
+    if not employees:
+        print("⚠ No data available.\n")
+        return
+    
+    total = sum(emp["salary"] for emp in employees)
+    avg = total / len(employees)
+    highest = max(employees, key=lambda x: x["salary"])
+
+    print(f"💰 Total Salary: {total}")
+    print(f"📊 Average Salary: {avg}")
+    print(f"🏆 Highest Paid: {highest}\n")
+
+# Menu System
+def menu():
+    while True:
+        print("=== Company Management System ===")
+        print("1. Add Employee")
+        print("2. View Employees")
+        print("3. Search Employee")
+        print("4. Salary Analysis")
+        print("5. Exit")
+
+        choice = input("Enter choice: ")
+
+        if choice == "1":
+            add_employee()
+        elif choice == "2":
+            view_employees()
+        elif choice == "3":
+            search_employee()
+        elif choice == "4":
+            salary_analysis()
+        elif choice == "5":
+            print("Exiting... 👋")
+            break
+        else:
+            print("❌ Invalid choice\n")
+
+# Run program
+menu()
