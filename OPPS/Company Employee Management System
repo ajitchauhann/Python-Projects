@@ -77,3 +77,80 @@ def menu():
 
 # Run program
 menu()
+
+
+
+#  Company Sales Tracker
+# Company Sales Tracker
+
+sales_data = []
+
+# Add Sale Record
+def add_sale():
+    product = input("Enter Product Name: ")
+    quantity = int(input("Enter Quantity Sold: "))
+    price = float(input("Enter Price per Unit: "))
+
+    total = quantity * price
+
+    sales_data.append({
+        "product": product,
+        "quantity": quantity,
+        "price": price,
+        "total": total
+    })
+
+    print("✅ Sale Added Successfully!\n")
+
+# View Sales
+def view_sales():
+    if not sales_data:
+        print("⚠ No sales data available.\n")
+        return
+    
+    for sale in sales_data:
+        print(sale)
+    print()
+
+# Total Revenue
+def total_revenue():
+    revenue = sum(s["total"] for s in sales_data)
+    print(f"💰 Total Revenue: {revenue}\n")
+
+# Best Selling Product
+def best_product():
+    if not sales_data:
+        print("⚠ No data available.\n")
+        return
+
+    best = max(sales_data, key=lambda x: x["quantity"])
+    print(f"🏆 Best Selling Product: {best}\n")
+
+# Menu System
+def menu():
+    while True:
+        print("=== Company Sales Tracker ===")
+        print("1. Add Sale")
+        print("2. View Sales")
+        print("3. Total Revenue")
+        print("4. Best Selling Product")
+        print("5. Exit")
+
+        choice = input("Enter choice: ")
+
+        if choice == "1":
+            add_sale()
+        elif choice == "2":
+            view_sales()
+        elif choice == "3":
+            total_revenue()
+        elif choice == "4":
+            best_product()
+        elif choice == "5":
+            print("Exiting... 👋")
+            break
+        else:
+            print("❌ Invalid choice\n")
+
+# Run
+menu()
