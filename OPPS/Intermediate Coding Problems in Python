@@ -219,3 +219,52 @@ def check_strength(password):
 pwd = generate_password()
 print("Generated Password:", pwd)
 print("Strength:", check_strength(pwd))
+
+
+
+import json
+
+FILE = "expenses.json"
+
+def load_data():
+    try:
+        with open(FILE, "r") as f:
+            return json.load(f)
+    except:
+        return []
+
+def save_data(data):
+    with open(FILE, "w") as f:
+        json.dump(data, f, indent=4)
+
+def add_expense():
+    amount = float(input("Enter amount: "))
+    category = input("Enter category: ")
+    
+    data = load_data()
+    data.append({"amount": amount, "category": category})
+    save_data(data)
+
+def show_summary():
+    data = load_data()
+    total = sum(item['amount'] for item in data)
+
+    category_total = {}
+    for item in data:
+        category_total[item['category']] = category_total.get(item['category'], 0) + item['amount']
+
+    print("Total Expense:", total)
+    print("Category-wise:")
+    for k, v in category_total.items():
+        print(f"{k}: {v}")
+
+while True:
+    print("\n1. Add Expense\n2. Show Summary\n3. Exit")
+    choice = input("Choose: ")
+
+    if choice == '1':
+        add_expense()
+    elif choice == '2':
+        show_summary()
+    else:
+        break
