@@ -268,3 +268,37 @@ while True:
         show_summary()
     else:
         break
+
+
+    import random
+
+def game():
+    print("Choose difficulty: easy / medium / hard")
+    level = input("Enter: ").lower()
+
+    if level == "easy":
+        attempts = 10
+    elif level == "medium":
+        attempts = 7
+    else:
+        attempts = 5
+
+    number = random.randint(1, 100)
+
+    while attempts > 0:
+        guess = int(input("Guess number (1-100): "))
+        
+        if guess == number:
+            print("🎉 Correct! You win!")
+            return
+        elif guess < number:
+            print("Too low!")
+        else:
+            print("Too high!")
+
+        attempts -= 1
+        print("Attempts left:", attempts)
+
+    print("😢 You lost! Number was:", number)
+
+game()
