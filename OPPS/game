@@ -98,3 +98,10 @@ t = float(input("Time: "))
 si = (p * r * t) / 100
 
 print("Simple Interest:", si)
+
+
+
+
+text = input("Enter text: ")
+
+print("Reversed:", text[::-1])
