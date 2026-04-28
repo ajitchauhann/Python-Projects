@@ -302,3 +302,6 @@ def game():
     print("😢 You lost! Number was:", number)
 
 game()
+
+
+

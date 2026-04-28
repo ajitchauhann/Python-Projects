@@ -95,3 +95,71 @@ while True:
         print("Too high")
     else:
         print("Too low")
+
+
+
+        import random
+from datetime import datetime
+
+# Sample Company Data
+company = {
+    "name": "TechNova Pvt Ltd",
+    "employees": [
+        {"id": 1, "name": "Amit", "department": "Sales"},
+        {"id": 2, "name": "Neha", "department": "Marketing"},
+        {"id": 3, "name": "Raj", "department": "Sales"},
+        {"id": 4, "name": "Simran", "department": "HR"},
+    ],
+    "sales": []
+}
+
+# Generate Random Sales Data
+products = ["Laptop", "Phone", "Tablet", "Headphones"]
+
+for _ in range(20):
+    sale = {
+        "employee_id": random.choice(company["employees"])["id"],
+        "product": random.choice(products),
+        "amount": random.randint(5000, 50000),
+        "date": datetime.now().strftime("%Y-%m-%d")
+    }
+    company["sales"].append(sale)
+
+# Total Revenue
+def calculate_total_revenue():
+    return sum(sale["amount"] for sale in company["sales"])
+
+# Sales by Employee
+def sales_by_employee():
+    result = {}
+    for sale in company["sales"]:
+        emp_id = sale["employee_id"]
+        result[emp_id] = result.get(emp_id, 0) + sale["amount"]
+    return result
+
+# Find Top Performer
+def top_performer():
+    sales_data = sales_by_employee()
+    top_emp_id = max(sales_data, key=sales_data.get)
+
+    for emp in company["employees"]:
+        if emp["id"] == top_emp_id:
+            return emp["name"], sales_data[top_emp_id]
+
+# Display Report
+def generate_report():
+    print(f"\nCompany: {company['name']}")
+    print("-" * 40)
+
+    print("Total Revenue:", calculate_total_revenue())
+
+    print("\nSales by Employee:")
+    for emp_id, total in sales_by_employee().items():
+        name = next(emp["name"] for emp in company["employees"] if emp["id"] == emp_id)
+        print(f"{name}: ₹{total}")
+
+    name, amount = top_performer()
+    print(f"\nTop Performer: {name} (₹{amount})")
+
+# Run Report
+generate_report()
