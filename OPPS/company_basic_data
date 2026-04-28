@@ -1,0 +1,123 @@
+import json
+import os
+
+DATA_FILE = "employees.json"
+
+
+# ---------- Utility Functions ----------
+def load_data():
+    if not os.path.exists(DATA_FILE):
+        return []
+    with open(DATA_FILE, "r") as file:
+        return json.load(file)
+
+
+def save_data(data):
+    with open(DATA_FILE, "w") as file:
+        json.dump(data, file, indent=4)
+
+
+# ---------- Core Functions ----------
+def add_employee():
+    data = load_data()
+
+    emp_id = input("Enter Employee ID: ")
+    name = input("Enter Name: ")
+    dept = input("Enter Department: ")
+    salary = float(input("Enter Salary: "))
+
+    employee = {
+        "id": emp_id,
+        "name": name,
+        "department": dept,
+        "salary": salary
+    }
+
+    data.append(employee)
+    save_data(data)
+
+    print("✅ Employee added successfully!\n")
+
+
+def view_employees():
+    data = load_data()
+
+    if not data:
+        print("No employees found.\n")
+        return
+
+    print("\n--- Employee List ---")
+    for emp in data:
+        print(f"ID: {emp['id']} | Name: {emp['name']} | Dept: {emp['department']} | Salary: {emp['salary']}")
+    print()
+
+
+def search_employee():
+    data = load_data()
+    keyword = input("Enter name to search: ").lower()
+
+    results = [emp for emp in data if keyword in emp['name'].lower()]
+
+    if not results:
+        print("No matching employee found.\n")
+        return
+
+    print("\n--- Search Results ---")
+    for emp in results:
+        print(emp)
+    print()
+
+
+def analytics():
+    data = load_data()
+
+    if not data:
+        print("No data available.\n")
+        return
+
+    total_salary = sum(emp['salary'] for emp in data)
+    avg_salary = total_salary / len(data)
+
+    dept_count = {}
+    for emp in data:
+        dept = emp['department']
+        dept_count[dept] = dept_count.get(dept, 0) + 1
+
+    print("\n--- Analytics ---")
+    print(f"Total Employees: {len(data)}")
+    print(f"Average Salary: {avg_salary:.2f}")
+    print("Department Distribution:")
+    for dept, count in dept_count.items():
+        print(f"  {dept}: {count}")
+    print()
+
+
+# ---------- Main Menu ----------
+def main():
+    while True:
+        print("===== Company Data Manager =====")
+        print("1. Add Employee")
+        print("2. View Employees")
+        print("3. Search Employee")
+        print("4. Analytics")
+        print("5. Exit")
+
+        choice = input("Enter choice: ")
+
+        if choice == "1":
+            add_employee()
+        elif choice == "2":
+            view_employees()
+        elif choice == "3":
+            search_employee()
+        elif choice == "4":
+            analytics()
+        elif choice == "5":
+            print("Exiting...")
+            break
+        else:
+            print("Invalid choice!\n")
+
+
+if __name__ == "__main__":
+    main()
