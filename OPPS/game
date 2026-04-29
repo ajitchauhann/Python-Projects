@@ -117,3 +117,23 @@ while True:
     current_time = time.strftime("%H:%M:%S")
     print(current_time, end="\r")
     time.sleep(1)
+
+
+
+ # Card Game
+    import random
+
+cards = [2,3,4,5,6,7,8,9,10,11,12,13,14]  # 11=J, 12=Q, 13=K, 14=A
+
+user = random.choice(cards)
+computer = random.choice(cards)
+
+print("You got:", user)
+print("Computer got:", computer)
+
+if user > computer:
+    print("✅ You win!")
+elif user < computer:
+    print("❌ Computer wins!")
+else:
+    print("🤝 It's a tie!")
