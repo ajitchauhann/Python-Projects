@@ -183,3 +183,6 @@ for i in range(5):
         print("❌ Saved!")
 
 print("Total Goals:", goals)
+
+
+
