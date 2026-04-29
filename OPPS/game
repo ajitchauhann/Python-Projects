@@ -160,3 +160,26 @@ for ball in range(1, 7):
         score += user
 
 print("Your final score:", score)
+
+
+
+
+# Penalty Shoot Game (Football style)
+
+import random
+
+goals = 0
+
+for i in range(5):
+    user = input("Choose direction (left, right, center): ")
+    comp = random.choice(["left", "right", "center"])
+
+    print("Goalkeeper chose:", comp)
+
+    if user != comp:
+        print("⚽ GOAL!")
+        goals += 1
+    else:
+        print("❌ Saved!")
+
+print("Total Goals:", goals)
