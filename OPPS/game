@@ -137,3 +137,26 @@ elif user < computer:
     print("❌ Computer wins!")
 else:
     print("🤝 It's a tie!")
+
+
+
+# Simple Cricket Game
+    import random
+
+score = 0
+
+print("🏏 Cricket Game (1 over = 6 balls)")
+
+for ball in range(1, 7):
+    user = int(input(f"Ball {ball} - Enter run (1-6): "))
+    comp = random.randint(1, 6)
+
+    print("Computer:", comp)
+
+    if user == comp:
+        print("❌ OUT!")
+        break
+    else:
+        score += user
+
+print("Your final score:", score)
