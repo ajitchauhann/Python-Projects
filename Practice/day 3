@@ -1,0 +1,70 @@
+import json
+import hashlib
+import os
+
+FILE_NAME = "passwords.json"
+
+# Load existing data
+def load_data():
+    if not os.path.exists(FILE_NAME):
+        return {}
+    with open(FILE_NAME, "r") as file:
+        return json.load(file)
+
+# Save data
+def save_data(data):
+    with open(FILE_NAME, "w") as file:
+        json.dump(data, file, indent=4)
+
+# Hash password
+def hash_password(password):
+    return hashlib.sha256(password.encode()).hexdigest()
+
+# Add new password
+def add_password():
+    site = input("Enter website: ")
+    username = input("Enter username: ")
+    password = input("Enter password: ")
+
+    data = load_data()
+    data[site] = {
+        "username": username,
+        "password": hash_password(password)
+    }
+
+    save_data(data)
+    print("✅ Password saved successfully!")
+
+# View passwords
+def view_password():
+    site = input("Enter website to retrieve: ")
+    data = load_data()
+
+    if site in data:
+        print(f"Username: {data[site]['username']}")
+        print(f"Password (hashed): {data[site]['password']}")
+    else:
+        print("❌ No record found!")
+
+# Main menu
+def main():
+    while True:
+        print("\n--- Password Manager ---")
+        print("1. Add Password")
+        print("2. View Password")
+        print("3. Exit")
+
+        choice = input("Enter choice: ")
+
+        if choice == "1":
+            add_password()
+        elif choice == "2":
+            view_password()
+        elif choice == "3":
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice!")
+
+if __name__ == "__main__":
+    main()
