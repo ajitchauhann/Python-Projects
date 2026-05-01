@@ -18,3 +18,14 @@ elif marks >= 60:
     print("Grade B")
 else:
     print("Grade C")
+
+
+
+# Using User Input   
+
+num = int(input("Enter a number: "))
+
+if num % 2 == 0:
+    print("Even number")
+else:
+    print("Odd number")
