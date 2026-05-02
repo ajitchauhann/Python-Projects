@@ -41,3 +41,15 @@ if num > 0:
         print("Positive Odd")
 else:
     print("Negative number")
+
+
+# and , or 
+
+age = 25
+salary = 30000
+
+if age > 18 and salary > 20000:
+    print("Eligible for loan")
+
+if age < 18 or salary < 20000:
+    print("Not eligible")
