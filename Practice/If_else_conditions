@@ -75,3 +75,12 @@ age = 20
 
 result = "Adult" if age >= 18 else "Minor"
 print(result)
+
+
+
+# Condition with lists(filtering)
+
+numbers = [10, 25, 30, 5]
+
+result = [n for n in numbers if n > 20]
+print(result)
