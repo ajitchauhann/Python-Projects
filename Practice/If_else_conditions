@@ -53,3 +53,17 @@ if age > 18 and salary > 20000:
 
 if age < 18 or salary < 20000:
     print("Not eligible")
+
+
+# Nested Condition
+
+age = 22
+has_id = True
+
+if age >= 18:
+    if has_id:
+        print("Entry allowed")
+    else:
+        print("ID required")
+else:
+    print("Underage")
