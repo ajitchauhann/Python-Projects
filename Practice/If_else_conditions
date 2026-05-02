@@ -67,3 +67,11 @@ if age >= 18:
         print("ID required")
 else:
     print("Underage")
+
+
+# One line condition
+
+age = 20
+
+result = "Adult" if age >= 18 else "Minor"
+print(result)
