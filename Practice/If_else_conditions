@@ -84,3 +84,11 @@ numbers = [10, 25, 30, 5]
 
 result = [n for n in numbers if n > 20]
 print(result)
+
+
+
+# for loop (basic)
+
+for i in range(5):
+    print("Number:", i)
+
