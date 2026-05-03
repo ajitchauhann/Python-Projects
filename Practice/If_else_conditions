@@ -101,3 +101,10 @@ while count < 5:
     print("Count:", count)
     count += 1
 
+
+# Loop through a list
+
+fruits = ["apple", "banana", "mango"]
+
+for fruit in fruits:
+    print(fruit)
