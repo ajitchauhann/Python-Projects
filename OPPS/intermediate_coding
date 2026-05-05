@@ -92,4 +92,43 @@ def get_expenses():
 
     return expenses
 
+
+# main.py
+
+from expense_manager import add_expense, get_expenses
+from analyzer import category_summary, monthly_total
+
+def menu():
+    print("\n--- Expense Analyzer ---")
+    print("1. Add Expense")
+    print("2. View Summary")
+    print("3. Exit")
+
+while True:
+    menu()
+    choice = input("Choose option: ")
+
+    if choice == "1":
+        category = input("Enter category: ")
+        amount = float(input("Enter amount: "))
+        add_expense(category, amount)
+        print("Expense added!")
+
+    elif choice == "2":
+        expenses = get_expenses()
+
+        print("\nCategory Summary:")
+        summary = category_summary(expenses)
+        for cat, amt in summary.items():
+            print(f"{cat}: ₹{amt}")
+
+        print(f"\nTotal Spending: ₹{monthly_total(expenses)}")
+
+    elif choice == "3":
+        print("Goodbye!")
+        break
+
+    else:
+        print("Invalid option!")
+
         
