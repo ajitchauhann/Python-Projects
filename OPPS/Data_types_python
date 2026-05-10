@@ -10,3 +10,14 @@ text = "hello python"
 
 print(text.upper())
 print(len(text))
+
+
+
+# String Example
+
+text = "Python Programming"
+
+print(text)
+print(text.upper())
+print(text.lower())
+print(len(text))
