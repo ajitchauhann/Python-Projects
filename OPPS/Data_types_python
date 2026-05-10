@@ -33,3 +33,17 @@ fruits.append("Orange")
 
 print(fruits)
 print(fruits[1])
+
+
+# Dictionary Example
+
+student = {
+    "name": "Ajit",
+    "age": 21,
+    "course": "Python"
+}
+
+print(student)
+
+print(student["name"])
+print(student["course"])
