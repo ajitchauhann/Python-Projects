@@ -1,0 +1,12 @@
+# Tuple
+
+data = ("Ajit", "Python", 21)
+
+print(data[0])
+print(data[1])
+
+# String
+text = "hello python"
+
+print(text.upper())
+print(len(text))
