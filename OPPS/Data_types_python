@@ -21,3 +21,15 @@ print(text)
 print(text.upper())
 print(text.lower())
 print(len(text))
+
+
+# List Example
+
+fruits = ["Apple", "Banana", "Mango"]
+
+print(fruits)
+
+fruits.append("Orange")
+
+print(fruits)
+print(fruits[1])
