@@ -47,3 +47,9 @@ print(student)
 
 print(student["name"])
 print(student["course"])
+
+
+# Boolean
+is_student = True
+print("\nStudent:", is_student)
+print("Type:", type(is_student))
