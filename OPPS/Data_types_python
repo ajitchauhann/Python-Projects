@@ -53,3 +53,9 @@ print(student["course"])
 is_student = True
 print("\nStudent:", is_student)
 print("Type:", type(is_student))
+
+
+# Set
+numbers = {1, 2, 3, 4, 5}
+print("\nNumbers:", numbers)
+print("Type:", type(numbers))
