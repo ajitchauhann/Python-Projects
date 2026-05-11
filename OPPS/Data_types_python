@@ -59,3 +59,9 @@ print("Type:", type(is_student))
 numbers = {1, 2, 3, 4, 5}
 print("\nNumbers:", numbers)
 print("Type:", type(numbers))
+
+
+# Integer
+age = 21
+print("Age:", age)
+print("Type:", type(age))
