@@ -1,0 +1,17 @@
+# Importing the math module
+import math
+
+# Using math functions
+number = 25
+
+# Square root
+print("Square root:", math.sqrt(number))
+
+# Power
+print("2 raised to 3:", math.pow(2, 3))
+
+# Value of pi
+print("Value of pi:", math.pi)
+
+# Factorial
+print("Factorial of 5:", math.factorial(5))
