@@ -1,11 +1,7 @@
+item1 = int(input("Enter first item price: "))
+item2 = int(input("Enter second item price: "))
+item3 = int(input("Enter third item price: "))
 
-class ATM:
-    def __init__(self, balance):
-        self.balance = balance
+total = item1 + item2 + item3
 
-    def withdraw(self, amount):
-        if amount <= self.balance:
-            self.balance -= amount
-            print("Withdraw successful")
-        else:
-            print("Insufficient balance")
+print("Total Bill:", total)
