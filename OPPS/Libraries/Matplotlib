@@ -15,3 +15,24 @@ plt.ylabel("Y Values")
 
 # Show graph
 plt.show()
+
+
+
+import matplotlib.pyplot as plt
+
+# Data
+subjects = ["Python", "Java", "C++", "JavaScript"]
+students = [40, 25, 15, 30]
+
+# Bar chart
+plt.bar(subjects, students)
+
+# Title
+plt.title("Students Learning Programming")
+
+# Labels
+plt.xlabel("Languages")
+plt.ylabel("Number of Students")
+
+# Display chart
+plt.show()
