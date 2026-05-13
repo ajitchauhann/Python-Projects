@@ -1,0 +1,17 @@
+# Basic Matplotlib Example
+import matplotlib.pyplot as plt
+
+# Data
+x = [1, 2, 3, 4, 5]
+y = [10, 20, 15, 30, 25]
+
+# Create graph
+plt.plot(x, y)
+
+# Title and labels
+plt.title("Simple Line Graph")
+plt.xlabel("X Values")
+plt.ylabel("Y Values")
+
+# Show graph
+plt.show()
