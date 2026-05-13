@@ -50,3 +50,14 @@ plt.xlabel("X Axis")
 plt.ylabel("Y Axis")
 
 plt.show()
+
+
+import matplotlib.pyplot as plt
+
+games = ["Cricket", "Football", "Hockey"]
+players = [11, 22, 15]
+
+plt.bar(games, players)
+
+plt.title("Players Data")
+plt.show()
