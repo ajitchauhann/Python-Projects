@@ -3,3 +3,12 @@ celsius = float(input("Enter temperature in Celsius: "))
 fahrenheit = (celsius * 9/5) + 32
 
 print("Temperature in Fahrenheit:", fahrenheit)
+
+
+
+email = input("Enter email: ")
+
+if "@" in email and "." in email:
+    print("Valid Email")
+else:
+    print("Invalid Email")
