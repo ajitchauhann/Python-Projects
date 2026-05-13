@@ -21,3 +21,12 @@ if username == "admin" and password == "1234":
     print("Login Successful")
 else:
     print("Wrong Username or Password")
+
+
+    item1 = int(input("Enter first item price: "))
+item2 = int(input("Enter second item price: "))
+item3 = int(input("Enter third item price: "))
+
+total = item1 + item2 + item3
+
+print("Total Bill:", total)
