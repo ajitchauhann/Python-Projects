@@ -12,3 +12,12 @@ if "@" in email and "." in email:
     print("Valid Email")
 else:
     print("Invalid Email")
+
+
+    username = input("Enter username: ")
+password = input("Enter password: ")
+
+if username == "admin" and password == "1234":
+    print("Login Successful")
+else:
+    print("Wrong Username or Password")
