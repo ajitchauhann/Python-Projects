@@ -61,3 +61,15 @@ plt.bar(games, players)
 
 plt.title("Players Data")
 plt.show()
+
+
+
+import matplotlib.pyplot as plt
+
+languages = ["Python", "Java", "C++"]
+students = [50, 30, 20]
+
+plt.pie(students, labels=languages, autopct="%1.1f%%")
+
+plt.title("Programming Languages")
+plt.show()
