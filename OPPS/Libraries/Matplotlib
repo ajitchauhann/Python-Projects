@@ -121,7 +121,7 @@ plt.title("Color Graph")
 plt.show()
 
 
-
+# 1. Sales Analysis Dashboard
 
 import matplotlib.pyplot as plt
 
@@ -141,6 +141,32 @@ plt.grid(True)
 plt.legend()
 
 plt.show()
+
+# 2. Student Marks Visualization
+
+import matplotlib.pyplot as plt
+
+students = ["Ajay", "Rohit", "Simran", "Aman", "Priya"]
+python_marks = [78, 88, 92, 69, 85]
+sql_marks = [80, 75, 89, 72, 90]
+
+x = range(len(students))
+
+plt.figure(figsize=(10, 5))
+
+plt.bar(x, python_marks, width=0.4, label="Python", align='center')
+plt.bar([i + 0.4 for i in x], sql_marks, width=0.4, label="SQL")
+
+plt.xticks([i + 0.2 for i in x], students)
+
+plt.title("Student Performance")
+plt.xlabel("Students")
+plt.ylabel("Marks")
+plt.legend()
+
+plt.show()
+
+
 
 
 
