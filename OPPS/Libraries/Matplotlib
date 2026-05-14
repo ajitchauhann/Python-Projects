@@ -168,6 +168,27 @@ plt.show()
 
 
 
+# 3. Weather Temperature Tracker
+
+import matplotlib.pyplot as plt
+
+days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+temperature = [32, 35, 34, 36, 38, 37, 33]
+
+plt.figure(figsize=(9, 5))
+
+bars = plt.bar(days, temperature)
+
+for bar in bars:
+    y = bar.get_height()
+    plt.text(bar.get_x() + bar.get_width()/2, y + 0.2, y,
+             ha='center')
+
+plt.title("Weekly Temperature Report")
+plt.ylabel("Temperature °C")
+
+plt.show()
+
 
 
 
