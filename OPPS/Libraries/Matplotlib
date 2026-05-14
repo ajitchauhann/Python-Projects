@@ -191,5 +191,27 @@ plt.show()
 
 
 
+# 4. Expense Tracker Pie Chart
+
+import matplotlib.pyplot as plt
+
+categories = ["Food", "Travel", "Shopping", "Bills", "Entertainment"]
+amount = [5000, 2000, 3500, 4000, 1500]
+
+plt.figure(figsize=(7, 7))
+
+plt.pie(
+    amount,
+    labels=categories,
+    autopct='%1.1f%%',
+    startangle=90
+)
+
+plt.title("Monthly Expense Distribution")
+
+plt.show()
+
+
+
 
 
