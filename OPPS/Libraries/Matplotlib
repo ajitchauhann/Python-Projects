@@ -123,5 +123,26 @@ plt.show()
 
 
 
+import matplotlib.pyplot as plt
+
+months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
+sales = [1200, 1500, 1800, 1700, 2100, 2500]
+profit = [200, 300, 400, 350, 500, 650]
+
+plt.figure(figsize=(10, 5))
+
+plt.plot(months, sales, marker='o', linewidth=3, label="Sales")
+plt.plot(months, profit, marker='s', linewidth=3, label="Profit")
+
+plt.title("Company Sales Dashboard")
+plt.xlabel("Months")
+plt.ylabel("Amount")
+plt.grid(True)
+plt.legend()
+
+plt.show()
+
+
+
 
 
