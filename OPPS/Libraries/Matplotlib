@@ -120,3 +120,8 @@ plt.plot(x, y, color="red", marker="o")
 plt.title("Color Graph")
 plt.show()
 
+
+
+
+
+
