@@ -234,3 +234,27 @@ plt.grid(True)
 plt.show()
 
 
+# 6. Advanced Multi-Plot Dashboard
+
+import matplotlib.pyplot as plt
+
+months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
+sales = [1200, 1500, 1800, 1700, 2100, 2500]
+expenses = [800, 900, 1100, 1000, 1200, 1400]
+
+fig, ax = plt.subplots(1, 2, figsize=(12, 5))
+
+# Line Chart
+ax[0].plot(months, sales, marker='o')
+ax[0].set_title("Sales Trend")
+ax[0].set_xlabel("Months")
+ax[0].set_ylabel("Sales")
+
+# Bar Chart
+ax[1].bar(months, expenses)
+ax[1].set_title("Expenses")
+ax[1].set_xlabel("Months")
+ax[1].set_ylabel("Expenses")
+
+plt.tight_layout()
+plt.show()
