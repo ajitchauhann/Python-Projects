@@ -212,6 +212,25 @@ plt.title("Monthly Expense Distribution")
 plt.show()
 
 
+# 5. Cricket Score Comparison
 
+import matplotlib.pyplot as plt
+
+players = ["Virat", "Rohit", "Gill", "Hardik", "KL Rahul"]
+runs_2024 = [850, 780, 920, 610, 700]
+runs_2025 = [910, 820, 970, 690, 760]
+
+plt.figure(figsize=(10, 5))
+
+plt.plot(players, runs_2024, marker='o', label="2024")
+plt.plot(players, runs_2025, marker='o', label="2025")
+
+plt.title("Cricket Runs Comparison")
+plt.xlabel("Players")
+plt.ylabel("Runs")
+plt.legend()
+plt.grid(True)
+
+plt.show()
 
 
