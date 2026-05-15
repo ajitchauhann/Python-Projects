@@ -258,3 +258,24 @@ ax[1].set_ylabel("Expenses")
 
 plt.tight_layout()
 plt.show()
+
+
+# 7. Website Traffic Analysis
+import matplotlib.pyplot as plt
+
+days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+visitors = [120, 150, 180, 170, 250, 300, 280]
+
+plt.figure(figsize=(10, 5))
+
+plt.plot(days, visitors, marker='o', linewidth=3)
+
+for i, value in enumerate(visitors):
+    plt.text(i, value + 5, str(value), ha='center')
+
+plt.title("Website Traffic Analysis")
+plt.xlabel("Days")
+plt.ylabel("Visitors")
+plt.grid(True)
+
+plt.show()
