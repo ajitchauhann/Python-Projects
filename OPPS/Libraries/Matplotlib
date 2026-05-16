@@ -345,3 +345,25 @@ plt.pie(
 plt.title("Daily Mobile Usage")
 
 plt.show()
+
+# 11. Bank Transaction Dashboard
+
+
+import matplotlib.pyplot as plt
+
+months = ["Jan", "Feb", "Mar", "Apr", "May"]
+deposit = [10000, 15000, 12000, 18000, 20000]
+withdraw = [7000, 5000, 9000, 6000, 8000]
+
+plt.figure(figsize=(10, 5))
+
+plt.plot(months, deposit, marker='o', label="Deposit")
+plt.plot(months, withdraw, marker='s', label="Withdraw")
+
+plt.title("Bank Transactions")
+plt.xlabel("Months")
+plt.ylabel("Amount")
+plt.legend()
+plt.grid(True)
+
+plt.show()
