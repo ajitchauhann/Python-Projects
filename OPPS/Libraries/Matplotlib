@@ -324,3 +324,24 @@ plt.ylabel("Weight (kg)")
 plt.grid(True)
 
 plt.show()
+
+
+# 10. Mobile Usage Statistics
+
+import matplotlib.pyplot as plt
+
+apps = ["Instagram", "YouTube", "WhatsApp", "Games", "Chrome"]
+hours = [4, 5, 3, 2, 1]
+
+plt.figure(figsize=(8, 8))
+
+plt.pie(
+    hours,
+    labels=apps,
+    autopct="%1.1f%%",
+    shadow=True
+)
+
+plt.title("Daily Mobile Usage")
+
+plt.show()
