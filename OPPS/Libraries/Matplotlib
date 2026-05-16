@@ -367,3 +367,21 @@ plt.legend()
 plt.grid(True)
 
 plt.show()
+
+
+# 12. IPL Team Score Analysis
+
+import matplotlib.pyplot as plt
+
+teams = ["CSK", "MI", "RCB", "KKR", "GT"]
+scores = [185, 172, 210, 198, 176]
+
+plt.figure(figsize=(10, 5))
+
+plt.bar(teams, scores)
+
+plt.title("IPL Team Scores")
+plt.xlabel("Teams")
+plt.ylabel("Runs")
+
+plt.show()
