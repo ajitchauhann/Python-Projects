@@ -46,3 +46,15 @@ while health > 0:
     print("Health:", health)
 
 print("\nGame Over")
+
+
+import random
+
+words1 = ["Shadow", "Ghost", "Dark", "Silent", "Cyber"]
+words2 = ["Hunter", "X", "Wizard", "Coder", "Phantom"]
+
+username = random.choice(words1) + random.choice(words2)
+
+number = random.randint(100, 999)
+
+print("Generated Username:", username + str(number))
