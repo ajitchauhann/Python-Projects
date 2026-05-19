@@ -232,3 +232,29 @@ elif sad > happy:
     print("Mood Detected: Sad")
 else:
     print("Mood Detected: Neutral")
+
+
+
+
+  #  3. Cricket Score Simulator
+
+  import random
+
+runs = [0, 1, 2, 3, 4, 6, "W"]
+
+score = 0
+wickets = 0
+
+for ball in range(1, 13):
+
+    result = random.choice(runs)
+
+    print(f"Ball {ball}: {result}")
+
+    if result == "W":
+        wickets += 1
+    else:
+        score += result
+
+print("\nFinal Score:", score)
+print("Wickets:", wickets)
