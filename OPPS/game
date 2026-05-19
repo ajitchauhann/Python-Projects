@@ -187,3 +187,21 @@ print("Total Goals:", goals)
 
 
 
+# 1. Fake Hacking Terminal
+
+import time
+import random
+
+messages = [
+    "Connecting to satellite...",
+    "Bypassing firewall...",
+    "Decrypting passwords...",
+    "Accessing secret files...",
+    "Downloading data...",
+    "Injecting virus...",
+    "Mission Complete!"
+]
+
+for msg in messages:
+    print(msg)
+    time.sleep(random.randint(1, 2))
