@@ -76,4 +76,37 @@ print("b =", b)
 
 
 
+# Number guessing game 
+
+# Number Guessing Trick Game
+
+secret = 7
+attempts = 3
+
+print("Guess the secret number between 1 and 10")
+print("You only have 3 chances!\n")
+
+while attempts > 0:
+    guess = int(input("Enter number: "))
+
+    if guess == secret:
+        print("Correct! You won 🎉")
+        break
+
+    elif guess > secret:
+        print("Too high!")
+
+    else:
+        print("Too low!")
+
+    attempts -= 1
+    print("Attempts left:", attempts)
+    print()
+
+else:
+    print("Game Over!")
+    print("The secret number was:", secret)
+
+
+
 
