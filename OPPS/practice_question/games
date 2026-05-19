@@ -23,3 +23,26 @@ if typed == sentence:
     print("Perfect Typing")
 else:
     print("Typing Mistakes Found")
+
+
+
+    health = 100
+
+while health > 0:
+
+    action = input("\nZombie Ahead! run/fight: ").lower()
+
+    if action == "fight":
+        health -= 20
+        print("You fought the zombie!")
+
+    elif action == "run":
+        health -= 10
+        print("You escaped!")
+
+    else:
+        print("Wrong action!")
+
+    print("Health:", health)
+
+print("\nGame Over")
