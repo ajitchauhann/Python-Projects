@@ -1,0 +1,25 @@
+import time
+
+sentence = "Python is a powerful programming language"
+
+print(sentence)
+
+start = time.time()
+
+typed = input("\nType the sentence: ")
+
+end = time.time()
+
+time_taken = end - start
+
+words = len(sentence.split())
+
+wpm = (words / time_taken) * 60
+
+print(f"\nTime Taken: {time_taken:.2f} sec")
+print(f"Typing Speed: {wpm:.2f} WPM")
+
+if typed == sentence:
+    print("Perfect Typing")
+else:
+    print("Typing Mistakes Found")
