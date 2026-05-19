@@ -205,3 +205,30 @@ messages = [
 for msg in messages:
     print(msg)
     time.sleep(random.randint(1, 2))
+
+
+
+    # 2. AI Mood Detector (Text Based)
+
+    happy_words = ["happy", "great", "awesome", "good"]
+sad_words = ["sad", "bad", "upset", "angry"]
+
+text = input("How are you feeling today? ").lower()
+
+happy = 0
+sad = 0
+
+for word in happy_words:
+    if word in text:
+        happy += 1
+
+for word in sad_words:
+    if word in text:
+        sad += 1
+
+if happy > sad:
+    print("Mood Detected: Happy")
+elif sad > happy:
+    print("Mood Detected: Sad")
+else:
+    print("Mood Detected: Neutral")
