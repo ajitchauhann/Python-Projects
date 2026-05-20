@@ -58,3 +58,143 @@ username = random.choice(words1) + random.choice(words2)
 number = random.randint(100, 999)
 
 print("Generated Username:", username + str(number))
+
+
+
+
+# Cyberpunk RPG Game
+
+import random
+
+player = {
+    "health": 100,
+    "money": 50,
+    "weapon": "Knife",
+    "inventory": []
+}
+
+enemies = [
+    {"name": "Street Hacker", "health": 40, "damage": 10},
+    {"name": "Cyber Robot", "health": 60, "damage": 15},
+    {"name": "Night Assassin", "health": 80, "damage": 20}
+]
+
+shop_items = {
+    "Medkit": 20,
+    "Laser Gun": 50,
+    "Armor": 40
+}
+
+
+def show_status():
+    print("\n===== PLAYER STATUS =====")
+    print("Health:", player["health"])
+    print("Money:", player["money"])
+    print("Weapon:", player["weapon"])
+    print("Inventory:", player["inventory"])
+
+
+def fight():
+    enemy = random.choice(enemies)
+
+    print(f"\n⚠ Enemy Appeared: {enemy['name']}")
+
+    while enemy["health"] > 0 and player["health"] > 0:
+
+        print(f"\nEnemy Health: {enemy['health']}")
+        print(f"Your Health: {player['health']}")
+
+        action = input("Attack / Run: ").lower()
+
+        if action == "attack":
+
+            damage = random.randint(10, 25)
+            enemy["health"] -= damage
+
+            print(f"You dealt {damage} damage!")
+
+            if enemy["health"] <= 0:
+                reward = random.randint(20, 50)
+                print(f"\n✅ {enemy['name']} defeated!")
+                print(f"You earned ${reward}")
+
+                player["money"] += reward
+                return
+
+            enemy_damage = enemy["damage"]
+            player["health"] -= enemy_damage
+
+            print(f"{enemy['name']} attacked you for {enemy_damage} damage!")
+
+        elif action == "run":
+            print("You escaped!")
+            return
+
+        else:
+            print("Invalid action")
+
+
+def shop():
+    print("\n===== CYBER SHOP =====")
+
+    for item, price in shop_items.items():
+        print(f"{item} - ${price}")
+
+    choice = input("What do you want to buy?: ").title()
+
+    if choice in shop_items:
+
+        if player["money"] >= shop_items[choice]:
+
+            player["money"] -= shop_items[choice]
+            player["inventory"].append(choice)
+
+            print(f"You bought {choice}")
+
+            if choice == "Medkit":
+                player["health"] += 30
+
+            elif choice == "Laser Gun":
+                player["weapon"] = "Laser Gun"
+
+            elif choice == "Armor":
+                player["health"] += 50
+
+        else:
+            print("Not enough money.")
+
+    else:
+        print("Item not found.")
+
+
+print("===== CYBERPUNK RPG =====")
+print("Welcome to Neon City")
+
+while True:
+
+    if player["health"] <= 0:
+        print("\n💀 You Died in Neon City")
+        break
+
+    print("\n1. Fight Enemy")
+    print("2. Visit Shop")
+    print("3. Show Status")
+    print("4. Exit Game")
+
+    choice = input("Choose: ")
+
+    if choice == "1":
+        fight()
+
+    elif choice == "2":
+        shop()
+
+    elif choice == "3":
+        show_status()
+
+    elif choice == "4":
+        print("Exiting Game...")
+        break
+
+    else:
+        print("Invalid choice")
