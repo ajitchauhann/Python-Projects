@@ -140,3 +140,17 @@ if (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0):
   print(year, " is a leap year")
 else:
   print(year, "is NOT a leap year")
+
+
+
+  # Pet Food Recommendation
+# Problem 10:- Recommend a type of pet food based on the pet's species and age.(e.g, Dog: <2 years - Puppy food, cat: > 5 years - Senior cat food)
+
+pet = input("Enter pet: ")
+age = int(input("Enter age: "))
+
+if pet == "dog" and age < 2:
+    print("Puppy food")
+
+elif pet == "cat" and age > 5:
+    print("Senior cat food")
