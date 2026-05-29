@@ -56,3 +56,14 @@ for i in input_str:
 print(reversed_str)
 
 
+
+from functools import singledispatch
+# Find the first Non_Repeated Character
+# Problem 5:- Given a string, find the first non_repeated character.
+
+input_str = 'AJay'
+for char in input_str:
+  if input_str.count(char) == 1:
+   print("Char is: ", char)
+   break
+
