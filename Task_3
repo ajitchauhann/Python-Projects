@@ -106,3 +106,20 @@ if number > 1:
 print(is_prime)
 
 
+# List Uniqueness Checker
+# Problem 9:- Check if all elements in a list are unique. If a duplicate is found, exit the loop and print the duplicate.
+
+# item = ["apple","banana","orange","apple","mango"]
+
+item = ["apple","banana","orange","apple","mango"]
+
+unique_item = set()
+
+for item in item:
+  if item in unique_item:
+    print("Duplicate: ",item)
+    break
+  unique_item.add(item)
+
+
+
