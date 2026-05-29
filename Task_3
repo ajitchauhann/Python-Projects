@@ -91,3 +91,18 @@ while True:
   else:
     print("Invalid number, try again")
 
+
+# Prime Number Checker
+# Problem 8:- Check it a number is prime.
+
+number = 5
+is_prime = True
+
+if number > 1:
+  for i in range(2, number):
+    if(number % i) == 0:
+      is_prime = False
+      break
+print(is_prime)
+
+
