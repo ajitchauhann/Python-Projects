@@ -24,3 +24,27 @@ for i in range(1, n+1):
 print("Sum of even number is: ", sum_even)
 
 
+
+# Multiplication Table Printer
+# Problem 3:- Print the multiplication table for a given number up to 10, but skip the fifth iteration.
+
+number = 4
+for i in range(1,11):
+ if i == 5:
+    continue
+ print(number,'x',i,'=',number * i)
+
+
+# Multiplication Table Printer
+# Problem 3:- Print the multiplication table for a given number up to 10, but skip the fifth iteration.
+
+number = 4
+for i in range(1,11):
+ if i == 5:
+    continue
+ print(number,'x',i,'=',number * i)
+
+
+
+
+
