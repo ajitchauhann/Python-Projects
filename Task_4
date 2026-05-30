@@ -42,3 +42,13 @@ def circle_stats(radius):
 
 a, c = circle_stats(3)  
 print("Area: ", a, "Circumference: ", c)
+
+
+
+# Default Parameter Value
+# Problem 5:- Write a function that greets a user. If no name is provided, it should greet with a default name.
+
+def greet(name = 'Ajay'):
+  return "Hello, " + name + "!" 
+
+print(greet('ajay'))  
