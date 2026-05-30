@@ -8,3 +8,14 @@ def square(number):
 
 result = square(4)
 print(result)  
+
+
+# Function with Multiple Parameters
+# Problem 2:- Create a function that takes two numbers as parameters and returns their sum.
+
+def add(numOne, numTwo):
+  return numOne + numTwo
+
+#result = add(2,4)
+print(add(4,6))
+#print(result)
