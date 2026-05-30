@@ -19,3 +19,12 @@ def add(numOne, numTwo):
 #result = add(2,4)
 print(add(4,6))
 #print(result)
+
+
+# Polymorphism in Functions
+# Problem 3:- Write a function multiply that multiplies two numbers, but can also accept and multiply strings.
+
+def multiply(p1,p2):
+  return p1 * p2
+
+print(multiply('ajay',3))  
