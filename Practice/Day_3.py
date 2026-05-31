@@ -38,3 +38,30 @@ def check_password(password):
 
 pwd = input("Enter Password: ")
 print(check_password(pwd)) 
+
+
+
+# Chatbot
+
+# Simple AI Chatbot
+
+print("AI Bot: Hello! Type 'bye' to exit.")
+
+while True:
+    user = input("You: ").lower()
+
+    if user == "hello":
+        print("AI Bot: Hi there!")
+    
+    elif user == "how are you":
+        print("AI Bot: I'm doing great. Thanks for asking!")
+    
+    elif user == "your name":
+        print("AI Bot: I am a simple AI chatbot.")
+    
+    elif user == "bye":
+        print("AI Bot: Goodbye!")
+        break
+    
+    else:
+        print("AI Bot: Sorry, I don't understand that.")
