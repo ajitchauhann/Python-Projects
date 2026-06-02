@@ -20,3 +20,11 @@ students = [
 passed = list(filter(lambda x: x[1] >= 40, students))
 
 print(passed)
+
+
+
+names = ["ajit", "rahul", "aman"]
+
+upper_names = list(map(lambda name: name.upper(), names))
+
+print(upper_names)
