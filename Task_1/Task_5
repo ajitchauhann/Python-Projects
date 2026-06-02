@@ -7,3 +7,16 @@ employees = [
 sorted_emp = sorted(employees, key=lambda emp: emp[1])
 
 print(sorted_emp)
+
+
+
+students = [
+    ("Ajit", 85),
+    ("Rahul", 35),
+    ("Aman", 72),
+    ("Karan", 28)
+]
+
+passed = list(filter(lambda x: x[1] >= 40, students))
+
+print(passed)
