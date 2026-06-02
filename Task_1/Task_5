@@ -28,3 +28,13 @@ names = ["ajit", "rahul", "aman"]
 upper_names = list(map(lambda name: name.upper(), names))
 
 print(upper_names)
+
+
+
+# Default Parameter Value
+# Problem 5:- Write a function that greets a user. If no name is provided, it should greet with a default name.
+
+def greet(name = 'Ajay'):
+  return "Hello, " + name + "!"
+
+print(greet('ajay'))
