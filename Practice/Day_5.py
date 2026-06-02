@@ -28,3 +28,17 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8]
 even = list(filter(lambda x: x % 2 == 0, numbers))
 
 print(even)
+
+
+
+# Lambda with sorted
+
+data = {
+    "Ajit": 85,
+    "Rohit": 70,
+    "Aman": 95
+}
+
+result = sorted(data.items(), key=lambda x: x[1])
+
+print(result)
