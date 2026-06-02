@@ -1,0 +1,9 @@
+employees = [
+    ("Ajit", 50000),
+    ("Rahul", 75000),
+    ("Aman", 60000)
+]
+
+sorted_emp = sorted(employees, key=lambda emp: emp[1])
+
+print(sorted_emp)
