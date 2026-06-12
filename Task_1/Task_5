@@ -55,3 +55,12 @@ def sum_all(*args):
 print(sum_all(1,2,3))
 print(sum_all(1,2,3,4,5))
 
+
+# Function with **Kwargs
+# Problem 8:- Create a function that accepts any number of keyword arguments and prints them in the format key: value.
+
+def print_kwargs(**kwargs):
+  for key, value in kwargs.items():
+    print(f"{key}: {value}")
+print_kwargs(name = "Ajit", age = 22, city = "Gurugram")
+
