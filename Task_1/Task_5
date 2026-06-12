@@ -45,3 +45,13 @@ print(greet('ajay'))
 
 cube = lambda x: x ** 3
 print(cube(3))
+
+# Function with *args
+# Problem 7:- Write a function that takes variable number of arguments and returns their sum.
+
+def sum_all(*args):
+  return sum(args)
+
+print(sum_all(1,2,3))
+print(sum_all(1,2,3,4,5))
+
